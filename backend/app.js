@@ -37,7 +37,7 @@ app.post('/insert',function (req, res) {
         to: email,
         subject: 'OTP',
         text:  'you are getting this otp for registering in otp app '+id, 
-           /* html: '<a href="http://localhost:3000/preview"></a>'*/
+           
      }
     transport.sendMail(mailOptions, function (error, info) {
       if (error) {
@@ -55,9 +55,9 @@ app.get('/:id',  (req, res) => {
   
     const id = req.params.otp;
     maildetails.findOne({"otp":id})
-      .then((product)=>{
-        //  console.log(product);
-          res.send(product);
+      .then((maildetails)=>{
+        //  console.log(maildetails);
+          res.send(maildetails);
       });
   })
 

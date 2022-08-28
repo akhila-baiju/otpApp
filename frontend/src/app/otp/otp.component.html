@@ -1,0 +1,11 @@
+<div>
+    <form (ngSubmit)="check()">
+       
+           <div class="card-header" style="text-align:center ;">
+        {{title}}
+    </div>
+    <label>Email</label>
+    <input type="text" name="otp" id="otp" required [(ngModel)]="otpdata.otp" ><br><br>
+    <button type="submit" >Submit</button>
+    </form>
+</div>

@@ -38,8 +38,14 @@ app.post('/insert',function (req, res) {
         from: 'wishyouon2022@gmail.com',
         to: email,
         subject: 'OTP',
+<<<<<<< HEAD
         text:  'you are getting this otp for registering in otp app '+id 
                }
+=======
+        text:  'you are getting this otp for registering in otp app '+id, 
+           
+     }
+>>>>>>> fa332cf888800826a090be76c5ed8689d1a23200
     transport.sendMail(mailOptions, function (error, info) {
       if (error) {
         console.log(error + " error in senting email")
@@ -56,10 +62,20 @@ app.get("/:id",  (req, res) => {
   res.header("Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE");
  
 
+<<<<<<< HEAD
      const id = req.params.id;
      maildata.find({mailId: id}).then((data)=>{
       res.send(data);
       console.log(data);
+=======
+app.get('/:id',  (req, res) => {
+  
+    const id = req.params.otp;
+    maildetails.findOne({"otp":id})
+      .then((maildetails)=>{
+        //  console.log(maildetails);
+          res.send(maildetails);
+>>>>>>> fa332cf888800826a090be76c5ed8689d1a23200
       });
 })
 

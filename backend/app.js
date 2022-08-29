@@ -68,18 +68,7 @@ app.get("/:id",  (req, res) => {
 })
 
 
-  //-------
-  /*app.get("/:id",  (req, res) => {
-  
-    const id = req.params.id;
-    Bookdata.findByIdAndDelete({"_id":id})
-    .findOne({"_id":id})
-      .then((book)=>{
-        //  console.log(product);
-          res.send(book);
-      });
-  })*/
-//------
+
 app.listen(PORT , (req,res)=>{
     console.log(`Server Running on PORT ${PORT}`);
 })

@@ -12,10 +12,10 @@ export class ServeService {
           .subscribe(data => { console.log(data) });
     }
 
-    checkOtp(otpdata:any)
+    checkOtp(id:any)
     {
     
-        return this.http.get("http://localhost:3000/"+otpdata);
+        return this.http.get(`${this.server_address}/`+id);
     
     }
 

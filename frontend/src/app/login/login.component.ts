@@ -9,7 +9,7 @@ import { ServeService } from '../serve.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  title:String ="Varify email";
+  title:String ="OTP Authentication App";
   constructor(public mail:ServeService,public route: Router) { }
 
   ngOnInit(): void {
@@ -20,10 +20,9 @@ export class LoginComponent implements OnInit {
 send()
 
 { 
- // var formdata=new FormData();
-  //  formdata.append("email",this.email);
-    this.mail.sendMail(this.userData);
+     this.mail.sendMail(this.userData);
     //alert("mail sent to "+ this.email);
+    localStorage.setItem("emailID", this.userData.email);
    this.route.navigate(['otp']);
 }
 }

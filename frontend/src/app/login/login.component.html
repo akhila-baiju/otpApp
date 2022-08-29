@@ -1,11 +1,14 @@
 <div>
     <form (ngSubmit)="send()">
        
-           <div class="card-header" style="text-align:center ;">
-        {{title}}
-    </div>
+           <div class="card-header" style="text-align:center ;"><strong>
+        {{title}}</strong>
+    </div><br>
+    
+    <div style="text-align:center ;">
     <label>Email</label>
     <input type="email" name="email" id="email" required [(ngModel)]="userData.email" ><br><br>
     <button type="submit" >Submit</button>
+    </div>
     </form>
 </div>

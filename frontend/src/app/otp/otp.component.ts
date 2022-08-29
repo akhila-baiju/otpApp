@@ -12,18 +12,21 @@ export class OtpComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  mailid=localStorage.getItem("emailID");
   otpdata={
     otp:0
   }
   details={
-    mail:"",
+    mail:'',
     otp:0
   }
 check()
 {
-  this.otpservvice.checkOtp(this.otpdata).subscribe((data)=>{
+  this.otpservvice.checkOtp(this.mailid).subscribe((data)=>{
     this.details=JSON.parse(JSON.stringify(data));
     console.log(this.details)
+    console.log("otp1="+this.details.mail);
+    console.log("otp2="+this.otpdata.otp)
 }) 
 }
  
